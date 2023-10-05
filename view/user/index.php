@@ -30,10 +30,10 @@
                                 <a href="edit.php?id=<?= $row[0] ?>" class="btn btn-warning">Editar</i></a>
 
                                 <!-- Button trigger modal -->
-                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</a>
+                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar<?= $row[0] ?>">Eliminar</a>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="modalEliminar<?= $row[0] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

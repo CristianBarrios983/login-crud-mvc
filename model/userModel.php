@@ -80,10 +80,15 @@
 
 
         public function delete($id){
-            $stament = $this->PDO->prepare("DELETE FROM personas WHERE id_persona = :id");
+            $stament = $this->PDO->prepare("DELETE FROM usuarios WHERE persona = :id");
             $stament->bindParam(":id",$id);
 
-            return ($stament->execute())
+            if($stament->execute()){
+                $stamentPerson = $this->PDO->prepare("DELETE FROM personas WHERE id_persona = :id");
+                $stamentPerson->bindParam(":id",$id); 
+            }
+
+            return ($stamentPerson->execute())
                 ? true
                 : false;
         }
